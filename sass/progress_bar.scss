@@ -1,0 +1,269 @@
+@import "compass/css3";
+*{
+   margin: 0;
+}
+body{
+  background: #000;
+}
+
+
+.bar{
+  margin: 4% auto;
+  height: 20px;
+  width: 40%;
+  position: relative;
+  background: #555;
+  @include border-radius(25px);
+  padding: 10px;
+  span{
+  	display: block;
+  	height: 100%;
+  	width: 50%;
+    @include border-radius(20px);
+    background-color: rgb(43,194,83);
+    background-image: -webkit-linear-gradient(
+       top,
+       rgb(43,194,83) 37%,
+       rgb(84,240,84) 69%
+    	);
+    position: relative;
+	  overflow: hidden;
+  }
+  span:after{
+			content: "";
+			position: absolute;
+			top: 0; 
+			left: 0; 
+			bottom: 0; 
+			right: 0;
+			background-image: 
+			   -webkit-gradient(linear, 0 0, 100% 100%, 
+			      
+			      color-stop(0.25, rgba(255, 255, 255, .2)), 
+			      color-stop(0.25, transparent), 
+			      color-stop(0.5, transparent), 
+			      color-stop(0.5, rgba(255, 255, 255, .2)), 
+			      color-stop(0.75, rgba(255, 255, 255, .2)), 
+			      color-stop(0.75, transparent), 
+			      to(transparent) );
+          overflow: hidden;
+	      -webkit-background-size: 50px;
+	      @include animation(move 2s linear infinite);
+          
+		}
+}
+@include keyframes(move){
+	0% {
+		     background-position: 0 0;
+		 }
+     100% {
+		      background-position: 50px 50px;
+		 }
+}
+
+
+
+
+.bar-cil{
+	width: 100px;
+	height: 100px;
+	margin: 0 auto;
+	border: 10px solid rgba(0,183,229,.9);
+	@include border-radius(70px);
+	
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	@include box-shadow(0 0 50px #2187e7);
+	padding: 10px;
+	@include animation(run1 0.85s linear infinite);
+	.bars-cil{
+		width: 80px;
+		height: 80px;
+		border: 10px solid rgba(0,183,229,.9);
+		@include border-radius(50px);
+		border-bottom: 10px solid transparent;
+		border-top: 10px solid transparent;
+		@include box-shadow(0 0 50px #2187e7);
+		@include animation(run2 0.75s linear infinite);
+		
+	}
+
+}
+@include keyframes(run1){
+	0% {
+		     @include transform(rotate(0deg));
+		 }
+     100% {
+		      @include transform(rotate(360deg));
+		 }
+}
+@include keyframes(run2){
+	0% {
+		     @include transform(rotate(0deg));
+		 }
+     100% {
+		      @include transform(rotate(-720deg));
+		 }
+}
+
+
+
+.bar-circle{
+	width: 100px;
+	height: 100px;
+	margin: 40px auto;
+	padding: 10px;
+	
+	border: 10px solid rgba(0,183,229,.9);
+	border-top: 10px solid transparent;
+	border-bottom: 10px solid transparent;
+	@include border-radius(70px);
+	@include box-shadow(0 0 50px #2187e7);
+	@include animation(bar-cir 0.75s linear infinite);
+}
+
+
+
+.bars-circle{
+	width: 80px;
+	height: 80px;
+	margin: 0 auto;
+	position: relative;
+	top: -160px;
+	border: 10px solid rgba(0,183,229,.9);
+	border-top: 10px solid transparent;
+	border-bottom: 10px solid transparent;
+	@include border-radius(70px);
+	@include box-shadow(0 0 50px #2187e7);
+	@include animation(bars-cir 0.75s linear infinite);
+}
+@include keyframes(bar-cir){
+  0%{
+    @include transform(rotate(160deg));
+    opacity: 0;
+  }
+  50%{
+    @include transform(rotate(145deg));
+    opacity: 1;
+  }
+  100%{
+    @include transform(rotate(-300deg));
+    opacity: 0;
+  }
+}
+@include keyframes(bars-cir){
+	0% {
+		     @include transform(rotate(0deg));
+		 }
+     100% {
+		      @include transform(rotate(360deg));
+		 }
+}
+
+
+.login-l{
+	height: 5px;
+	width: 100%;
+	margin: 40px 0;
+	@include box-shadow(1px 1px 5px 2px #333 inset);
+	p{
+		height: 5px;
+		
+		background-color: #2187e7;
+		@include box-shadow(0px 0px 7px 2px rgba(0, 198, 255, 0.7));
+		@include animation(go 1s linear);
+	}
+}
+@include keyframes(go){
+	0%{
+		width:0%;
+	}
+	100%{
+		width: 100%;
+	}
+}
+
+
+.wei{
+	width: 250px;
+	height: 200px;
+	margin: 50px auto;
+	.wei-in{
+		height: 60px;
+		width: 20px;
+		
+		@include inline-block;
+		@include border-top-left-radius(50px);
+		@include border-top-right-radius(50px);
+
+		@include animation(wei 0.8s linear infinite);
+
+	}
+	#wei-in1{
+		position: relative;
+		left: 110px;
+	    top: 20px;
+	    @include animation-delay(0.36s);
+	}
+	#wei-in2{
+		position: relative;
+		left: 120px;
+	    top: 36px;
+	    @include animation-delay(0.48s);
+		@include transform(rotate(45deg));
+
+	}
+	#wei-in3{
+		position: relative;
+		left: 108px;
+	    top: 74px;
+	    @include animation-delay(.6s);
+		@include transform(rotate(90deg));
+	}
+	#wei-in4{
+		position: relative;
+		left: 64px;
+	    top: 112px;
+	    @include animation-delay(.72s);
+		@include transform(rotate(135deg));
+	}
+	#wei-in5{
+		position: relative;
+		left: -2px;
+	    top: 127px;
+	    @include animation-delay(.84s);
+		@include transform(rotate(180deg));
+	}
+	#wei-in6{
+		position: relative;
+		left: -68px;
+	    top: 111px;
+	    @include animation-delay(.96s);
+		@include transform(rotate(225deg));
+	}
+	#wei-in7{
+		position: relative;
+		left: -111px;
+	    top: 73px;
+	    @include animation-delay(1.08s);
+		@include transform(rotate(270deg));
+	}
+	#wei-in8{
+		position: relative;
+		left: -124px;
+	    top: 35px;
+	    @include animation-delay(1.2s);
+	    @include transform(rotate(315deg));
+
+	}
+
+
+}
+@include keyframes(wei){
+  0%{
+     background: #2187e7;
+   }
+  100%{
+     background: transparent;
+  }
+}

@@ -1,0 +1,17 @@
+@import "compass/css3";
+@import "compass/reset";
+*{
+	@include box-sizing(border-box);
+	font-size: 12px;
+	line-height: 1.5;
+	font-family: tahoma,arial,\5b8b\4f53,sans-serif;
+}
+body{
+	color: #333;
+}
+h2
+{
+	padding-left:20px;
+	margin:.83em 0;
+	font-size:1.5em;
+}
